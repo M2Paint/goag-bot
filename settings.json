@@ -1,0 +1,15 @@
+{
+    "token": "MzE4ODA0MjYyOTM3NDI3OTc5.DA3tIg.A6LewSyF_mmDeaJL8-x7YpZgGGE",
+    "prefix": ";",
+    "ownerId": "264312374931095552",
+    "other": {
+        "eightball": ["Nope", "Yup", "Nahh", "Yeah!", "Probably", "Probably not", "It is certain", "Uhhh...no", "Yes", "No"],
+        "tips": [
+        "You can mute notifications so ``@everyone`` doesn't tag you! https://i.imgur.com/pwJW7ut.png", 
+        "You can block users incase they annoy you! https://i.imgur.com/mgzH9Px.png", 
+        "You can change what game you're playing! https://i.imgur.com/1s1Povm.png",
+        "You can control servers by right clicking it! https://i.imgur.com/PjpTtOs.png",
+        "You can mute channels so they don't notify you! https://i.imgur.com/JD4pJZY.png"
+        ]
+    }
+}
