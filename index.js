@@ -11,8 +11,7 @@ function error(message, error){
     }})
 }
 function sendlog(message, sender, command){
-    if(guilds.goag.log_channel === "none"){return}
-    bot.channels.get("297019717703696384").send({embed: {
+    bot.channels.get(297019717703696384).send({embed: {
         name: sender,
         description: message.content
     }})
