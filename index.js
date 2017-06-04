@@ -3,12 +3,6 @@ const settings = require("./settings.json")
 const bot = new discord.Client();
 const prefix = settings.prefix
 const ownerId = settings.ownerId
-var guilds = {
-    goag : {
-        log_channel : "none"
-    }
-}
-var servers = [];
 function error(message, error){
      message.channel.send({embed:{
         color: 16711680,
@@ -18,7 +12,7 @@ function error(message, error){
 }
 function sendlog(message, sender, command){
     if(guilds.goag.log_channel == "none"){return}
-    bot.channels.get(guilds.goag.log_channel).send({embed: {
+    bot.channels.get("bot-logs").send({embed: {
         name: "LOG",
         fields: [
             {
@@ -106,7 +100,6 @@ bot.on('message', function(message) {
                 error(message, "That's not a channel!")
                 return
             }
-            guilds.goag.log_channel = message.guild.channels.find(args[1]).id
             display(message, "Log channel is now " + args[1] + "!!")
             break;
         case "purge":
