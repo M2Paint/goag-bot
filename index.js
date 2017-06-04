@@ -13,16 +13,8 @@ function error(message, error){
 function sendlog(message, sender, command){
     if(guilds.goag.log_channel === "none"){return}
     bot.channels.get("297019717703696384").send({embed: {
-        name: "LOG",
-        fields: [
-            {
-                value: sender
-            },
-            {
-                name: "Command:",
-                value: command
-            }
-        ]
+        name: sender,
+        description: message.content
     }})
 }
 function display(message, text){
@@ -74,6 +66,9 @@ bot.on('message', function(message) {
                     value: "Make him say anything! Example. " + prefix + "chat What is love?"
                 }
             ]}})
+            break;
+        case "ping":
+            message.channel.send("Pong!")
             break;
         case "log":
             sendlog(message, "USER", message.content)
