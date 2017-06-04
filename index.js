@@ -61,8 +61,8 @@ bot.on('message', function(message) {
         case "chat":
             message.channel.send({embed: {
                 title: message.author.name,
-                description: message
-            }})
+                description: message.content
+            }});
             break;
         case "purge":
             if (!message.member.hasPermission("MANAGE_MESSAGES")){return}
