@@ -70,6 +70,8 @@ bot.on('message', function(message) {
         case "ping":
             message.channel.send("Pong!")
             break;
+        case "pong":
+            message.channel.send("You could of said ping but oh well. Ping!")
         case "log":
             sendlog(message, "USER", message.content)
             break;
