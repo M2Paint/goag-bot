@@ -55,6 +55,10 @@ bot.on('message', function(message) {
                 {
                     name: "8ball",
                     value: "Ask it anything!! Example. "+prefix+"8ball are you running?"
+                },
+                {
+                    name: "chat",
+                    value: "Make him say anything! Example. " + prefix + "chat What is love?"
                 }
             ]}})
             break;
