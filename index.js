@@ -61,7 +61,7 @@ bot.on('message', function(message) {
         case "chat":
             message.channel.send({embed: {
                 title: message.member.name,
-                description: message.content.substring(prefix.length + args[1].length + 2)
+                description: message.content.substring(prefix.length + args[1].length)
             }});
             break;
         case "purge":
