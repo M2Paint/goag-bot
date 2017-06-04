@@ -65,7 +65,7 @@ bot.on('message', function(message) {
         case "chat":
             if(args[1].length) {
                 message.channel.send({embed: {
-                    color: FFFFF,
+                    color: FFFFFF,
                     title: message.author.name,
                     description: message.content.substring(prefix.length + 4)
                 }});
