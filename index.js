@@ -63,7 +63,6 @@ bot.on('message', function(message) {
                 title: message.author.name,
                 description: message
             }})
-            };
             break;
         case "purge":
             if (!message.member.hasPermission("MANAGE_MESSAGES")){return}
