@@ -102,7 +102,7 @@ bot.on('message', function(message) {
                 error(message, "Check your arguments!")
                 return
             }
-            if(!message.guild.channels.find("name", "jokes")){
+            if(!message.guild.channels.find("name", args[1].substring(1))){
                 error(message, "That's not a channel!")
                 return
             }
