@@ -11,7 +11,7 @@ function error(message, error){
     }})
 }
 function sendlog(message, sender, command){
-    if(guilds.goag.log_channel == "none"){return}
+    if(guilds.goag.log_channel === "none"){return}
     bot.channels.get("bot-logs").send({embed: {
         name: "LOG",
         fields: [
@@ -72,12 +72,11 @@ bot.on('message', function(message) {
                 {
                     name: "chat",
                     value: "Make him say anything! Example. " + prefix + "chat What is love?"
-                },
-                {
-                    name: "setlog",
-                    value: "Sets the log channel! Example. "+prefix+"setlog #logs"
                 }
             ]}})
+            break;
+        case "log":
+            sendlog(message, "USER", message.content)
             break;
         case "chat":
             if(args[1].length) {
@@ -86,21 +85,9 @@ bot.on('message', function(message) {
                     title: message.author.name,
                     description: message.content.substring(prefix.length + 4)
                 }});
-                sendlog(message, "USER", message.content)
             }else{
                 error(message, "Check your arguments!")
             }
-            break;
-        case "setlog":
-            if(!args[1]){
-                error(message, "Check your arguments!")
-                return
-            }
-            if(!message.guild.channels.find("name", args[1])){
-                error(message, "That's not a channel!")
-                return
-            }
-            display(message, "Log channel is now " + args[1] + "!!")
             break;
         case "purge":
             if (!message.member.hasPermission("MANAGE_MESSAGES")){return}
@@ -114,7 +101,6 @@ bot.on('message', function(message) {
                 if (num < 101) {
                     message.channel.bulkDelete(num)
                     display(message, "Purged " + num + " messages!")
-                    sendlog(message, "USER", message.content)
                 }else{
                     error(message, "Error purging messages. Make sure what you entered is a number and less than 100!")
                 }
@@ -130,7 +116,6 @@ bot.on('message', function(message) {
                     var mem = message.mentions.users.first()
                     message.guild.member(mem).kick();
                     display(message, mem + " has been kicked!!")
-                    sendlog(message, "USER", message.content)
                 } catch (theerror) {
                     error(message, "Can't kick that user!!!!")
                 }
@@ -145,7 +130,6 @@ bot.on('message', function(message) {
                     var mem = message.mentions.users.first()
                     message.guild.member(mem).ban();
                     display(message, mem + " has been banned!!")
-                    sendlog(message, "USER", message.content)
                 } catch (theerror) {
                     error(message, "Can't ban that user!!!!")
                 }
@@ -155,7 +139,6 @@ bot.on('message', function(message) {
             if(args[1]){
                 var num = Math.floor(Math.random()*settings.other.eightball.length)
                 display(message, settings.other.eightball[num])
-                sendlog(message, "USER", message.content)
             }else{
                 error(message, "Check your arguments!")
             }
@@ -163,7 +146,6 @@ bot.on('message', function(message) {
         case "tip":
             var random = Math.floor(Math.random()*settings.other.tips.length)
             message.channel.send(settings.other.tips[random])
-            sendlog(message, "USER", message.content)
             break;
     };
 });
