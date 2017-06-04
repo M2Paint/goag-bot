@@ -63,10 +63,14 @@ bot.on('message', function(message) {
             ]}})
             break;
         case "chat":
-            message.channel.send({embed: {
-                title: message.member.name,
-                description: message.content.substring(prefix.length + args[1].length)
-            }});
+            if(args[1].length) {
+                message.channel.send({embed: {
+                    title: message.member.name,
+                    description: message.content.substring(prefix.length + 4)
+                }});
+            }else{
+                error(message, "Check your arguments!")
+            }
             break;
         case "purge":
             if (!message.member.hasPermission("MANAGE_MESSAGES")){return}
