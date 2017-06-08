@@ -3,7 +3,8 @@
     "prefix": ";",
     "ownerId": "264312374931095552",
     "other": {
-        "eightball": ["Nope", "Yup", "Nahh", "Yeah!", "Probably", "Probably not", "It is certain", "Uhhh...no", "Yes", "No"],
+        "eightball": ["Nope", "Yup", "Nahh", "Yeah!", "Probably", "Probably not", "It is certain", "Uhhh...no", "Yes", "No",
+        "Yeah..no", "Ha you thought", "Hell yeah", "Totally", "You're ugly so ask again later", "I don't want to answer you", "lol no kid", "Yeeeah", "go away kthxbye"],
         "tips": [
         "You can mute notifications so ``@everyone`` doesn't tag you! https://i.imgur.com/pwJW7ut.png", 
         "You can block users incase they annoy you! https://i.imgur.com/mgzH9Px.png", 
